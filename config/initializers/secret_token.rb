@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Muafiyet::Application.config.secret_token = 'fe16ff3d947a8d10c11e5575d4969f592c64fcc0b5564bd862e8e81124694532def78def0948b2e9063841050515b7b13c36e2ce883def43d5c587d3aae0732d'
+Exam::Application.config.secret_token = '506185ae665628b998ef5201544c593977568168d580130aa0d1face4984dba8c20ffe72d833ddc5711a5aab470f8e1548e5587ca66e7f444e52a79ed7e1e64d'

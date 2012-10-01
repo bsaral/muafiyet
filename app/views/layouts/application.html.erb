@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Muafiyet</title>
+  <title>CES</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          
+          <a class="brand" href="/" style = "color:#990033">Muafiyet Sınavı</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Ana Sayfa</a></li>
+            </ul>
+            </div>
+            
+          </div><!--/.nav-collapse -->
+          
+          
+        </div>
+        
+      </div>
 
-<%= yield %>
+   
+   
+    <%= yield %>
+    
+  
 
 </body>
 </html>

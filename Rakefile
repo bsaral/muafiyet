@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Muafiyet::Application.load_tasks
+Exam::Application.load_tasks
