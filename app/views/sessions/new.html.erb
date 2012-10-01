@@ -1,13 +1,7 @@
 <div class="container">
-	<div class="hero-unit" style = "position:absolute;top:120px;left:180px;" >
-		<h2 style = "color:#990033">Muafiyet Sınavı</h2>
-		 <p ><a class="btn btn-warning btn-large" style = "position:relative;top:30px;left:40px;" >Learn more &raquo;</a></p>
-	</div>
-	
-</div>
-<div class="row">
-    <div class="span8 offset2">
-    <div style= "position:absolute;top:130px;left:8in">
+  <div class="row">
+    <div class="span10 offset3">
+      <div style= "position:absolute;top:130px">
       <%= form_tag sessions_path,:class=>"form-horizontal" do %>
       <legend>Kullanıcı Girişi</legend>
         <% if flash[:error] %>
@@ -28,13 +22,4 @@
       </div>
     </div>
   </div>
-<div class="well navbar-fixed-bottom">
-   <div class="container">
-      <div class="row">
-         <div class="span4 offset4">
-            <span class="copyright" >Copyright © BETÜL SARAL 2012</span>
-          </div>
-       </div>
-    </div>
 </div>
-
