@@ -7,6 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create(:username => "bsaral", :password => "1234", :password_confirmation => "1234",:role => "guest")
+User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "guest")
 
-User.create(:username => "ayten", :password => "1234", :password_confirmation => "1234",:role => "admin")
+User.create( username: "ayten", password: "1234", password_confirmation: "1234",role: "admin")
+
+Anket.create( answer: "EVET")
+
+Anket.create( answer: "HAYIR")
+
+
