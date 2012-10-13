@@ -1,23 +1,26 @@
-<h1>Listing ankets</h1>
+<div class="container">
+	<div class="hero-unit" style = "position:absolute;top:80px;left:330px;" >
+		<h2 style = "color:#990033">Muafiyet Sınavına Girmek İster misiniz ? </h2>
+	</div>
+	<div class="row">
+		<div class="span10 offset3">
+			<div style= "position:absolute;top:280px">
+				<% for anket in Anket.find(:all) %>
+					<%= link_to '/show',:class => 'btn btn-large btn-warning', style: "width:90px;margin:90px;position:relative;left:-90px;" do %>
+						<%= anket.answer %>
+					<% end %>
+					
+					
+				<% end %>
+				
 
-<table>
-  <tr>
-    <th>Answer</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @ankets.each do |anket| %>
-  <tr>
-    <td><%= anket.answer %></td>
-    <td><%= link_to 'Show', anket %></td>
-    <td><%= link_to 'Edit', edit_anket_path(anket) %></td>
-    <td><%= link_to 'Destroy', anket, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Anket', new_anket_path %>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>

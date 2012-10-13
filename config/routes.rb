@@ -8,7 +8,7 @@ Exam::Application.routes.draw do
   resources :sessions
   
   resources :ankets
-  match "anket" => "ankets#new" ,:as => "anket"
+  match "anket" => "ankets#index" ,:as => "anket"
   
 
  
