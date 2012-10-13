@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
               case user.role
-              when "guest"
+              when "student"
                 redirect_to ("/anket")
               when "admin"
                 redirect_to ("/anket")
