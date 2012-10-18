@@ -6,7 +6,7 @@
 		<div class="span10 offset3">
 			<div style= "position:absolute;top:280px">
 				<% for anket in Anket.find(:all) %>
-					<%= button_to anket.answer, { :action => "show", :id => anket.id }, :class => 'btn btn-large btn-warning', style: "width:120px;position:relative;left:150px;" %>
+					<%= button_to anket.answer, { :action => "show", :id => anket.id, :method => :get }, :class => 'btn btn-large btn-warning', style: "width:120px;position:relative;left:150px;" %>
 					
 				<% end %>
 				

@@ -5,7 +5,8 @@ class AnketsController < ApplicationController
   end
   
   def show
-	@anket = Anket.find(params[:id])
+	
+	
   
   end
 end
