@@ -10,9 +10,5 @@ class AnketsController < ApplicationController
 	
   end
   
-  def update
-	redirect_to("/anket")
-  
-  end
   
 end
