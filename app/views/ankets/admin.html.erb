@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="hero-unit">
+		<h3>Listing Answers</h3>
+
+		<table class="table table-striped display">
+			<thead>
+				<tr>
+				  <th>NO</th>
+				  <th>Answer</th>
+				  <th>Created at</th>
+				  <th>Updated at</th>
+				</tr>
+			 </thead>
+		     <tbody>
+
+			   <% @count = 0 %>
+			   <% @anket.each do |anket| %>
+				  <% @count +=1 %>
+				  <tr>
+					<td><%= @count %></td>
+					<td><%= anket.answer %></td>
+					<td><%= anket.created_at %></td>
+					<td><%= anket.updated_at %></td>
+				  </tr>
+			   <% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

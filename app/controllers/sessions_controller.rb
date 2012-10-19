@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
               when "student"
                 redirect_to ("/anket")
               when "admin"
-                redirect_to ("/anket")
+                redirect_to ("/admin")
               end
          
     else
