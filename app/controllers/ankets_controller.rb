@@ -12,6 +12,7 @@ class AnketsController < ApplicationController
   
   def admin 
 	@anket = Anket.all
+	
   
   end
   
