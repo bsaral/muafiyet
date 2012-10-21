@@ -19,7 +19,15 @@ class AnketsController < ApplicationController
 		@anket.answer = "HAYIR"
 	end
 	
-	Anket.create(:answer => @anket.answer, :name => @student.username)
+	Anket.create(:userid => @student.id, :answer => @anket.answer, :name => @student.username)
+	@ankets = Anket.find_by_id(@student.id)
+	unless @ankets.id.nil?
+		@ankets.answer=@anket.answer
+		@ankets.save
+	end
+	
+	
+		
 	
   end
   
