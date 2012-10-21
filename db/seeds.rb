@@ -9,10 +9,11 @@
 
 User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student")
 
-User.create( username: "ayten", password: "1234", password_confirmation: "1234",role: "admin")
+User.create( username: "student", password: "1234", password_confirmation: "1234",role: "student")
 
-Anket.create( answer: "EVET")
+User.create( username: "hayriye", password: "1234", password_confirmation: "1234",role: "student")
 
-Anket.create( answer: "HAYIR")
+User.create( username: "admin", password: "1234", password_confirmation: "1234",role: "admin")
+
 
 

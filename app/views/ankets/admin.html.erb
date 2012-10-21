@@ -17,9 +17,10 @@
 			   <% @count = 0 %>
 			   <% @anket.each do |anket| %>
 				  <% @count +=1 %>
+				  
 				  <tr>
 					<td><%= @count %></td>
-					<td><%= @user %></td>
+					<td><%= anket.name %></td>
 					<td><%= anket.answer %></td>
 					<td><%= anket.created_at %></td>
 					<td><%= anket.updated_at %></td>
