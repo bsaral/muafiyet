@@ -19,15 +19,16 @@ class AnketsController < ApplicationController
 		@anket.answer = "HAYIR"
 	end
 	
-	Anket.create(:userid => @student.id, :answer => @anket.answer, :name => @student.username)
-	@ankets = Anket.find_by_id(@student.id)
-	unless @ankets.id.nil?
-		@ankets.answer=@anket.answer
-		@ankets.save
-	end
+	@find = Anket.find_by_userid(@student.id)
+	
+	if @find == nil
+		Anket.create(:userid => @student.id, :answer => @anket.answer, :name => @student.username)
 	
 	
+	else
+		@find.update_attribute(:answer, @anket.answer)
 		
+	end
 	
   end
   
