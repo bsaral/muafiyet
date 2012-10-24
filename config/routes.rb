@@ -13,6 +13,8 @@ Exam::Application.routes.draw do
   match "admin" => "ankets#admin" ,:as => "admin"
   
   
+  match "lang/:locale" => "home#lang" 
+  
   
   
 
