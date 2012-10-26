@@ -21,7 +21,7 @@ class AnketsController < ApplicationController
 	end
 	
 	@time_start   = Time.now
-    @time_finish = @time_start + 2.minutes
+    @time_finish = @time_start + 1.minutes
 	
 	@find = Anket.find_by_userid(@student.id)
 	
