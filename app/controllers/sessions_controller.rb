@@ -18,10 +18,10 @@ class SessionsController < ApplicationController
         flash[:error] = "Kullanici adin ve/veya parolan hatali"
         redirect_to root_url
 	end
-   end
+ end
 
-     def destroy
-       session[:user_id] = nil
-       redirect_to root_url
-    end
+ def destroy
+    session[:user_id] = nil
+    redirect_to root_url
+ end
 end

@@ -2,6 +2,7 @@ class AnketsController < ApplicationController
 
   def index
 	@ankets = Anket.all
+	
   
   end
   
@@ -19,10 +20,21 @@ class AnketsController < ApplicationController
 		@anket.answer = "HAYIR"
 	end
 	
+	@time_start   = Time.now
+    @time_finish = @time_start + 2.minutes
+	
 	@find = Anket.find_by_userid(@student.id)
 	
 	if @find == nil
-		Anket.create(:userid => @student.id, :answer => @anket.answer, :name => @student.username)
+	
+		Anket.create(
+			:userid => @student.id, 
+			:answer => @anket.answer, 
+			:name => @student.username,
+			:time_start   => @time_start,
+			:time_finish  => @time_finish,
+			:time_finish_anket => nil
+		)
 	
 	
 	else
