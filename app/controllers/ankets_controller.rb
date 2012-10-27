@@ -20,8 +20,7 @@ class AnketsController < ApplicationController
 		@anket.answer = "HAYIR"
 	end
 	
-	@time_start   = Time.now
-    @time_finish = @time_start + 1.minutes
+	
 	
 	@find = Anket.find_by_userid(@student.id)
 	
@@ -31,9 +30,6 @@ class AnketsController < ApplicationController
 			:userid => @student.id, 
 			:answer => @anket.answer, 
 			:name => @student.username,
-			:time_start   => @time_start,
-			:time_finish  => @time_finish,
-			:time_finish_anket => nil
 		)
 	
 	

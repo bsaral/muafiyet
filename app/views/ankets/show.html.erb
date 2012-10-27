@@ -1,21 +1,3 @@
-<script type="text/javascript">
-	//var austDay = new Date( new Date().getTime() + <%= 15.minutes.to_i * 1000 %> );
-        var now = new Date().getTime();
-        var austDay = new Date( (<%= @time_finish.to_i %> - (<%= Time.now.to_i %> - now/1000 )) * 1000);
-
-        $(function () {
-            $('#clock').countdown({
-                format: 'MS',
-                until: austDay,
-                expiryUrl: location.protocol + '//' + location.host + '/finish/',
-		compact: true
-              });
-        });
-</script>
-
-<div style="position:absolute;top:420px;left:530px;">
-    <div id="clock" style="width: 240px; height: 45px;"></div>
-</div>
 
 
 <div class="container">
