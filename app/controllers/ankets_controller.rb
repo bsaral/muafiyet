@@ -40,6 +40,7 @@ class AnketsController < ApplicationController
 	else
 	
 		@time_finish = @find.created_at + 1.minutes
+		#@time_finish = @find.created_at + 7.days
 		if @student.userlogin >= @time_finish
 			redirect_to ("/finish")
 		
