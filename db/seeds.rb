@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student")
+User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student", userlogin: nil)
 
-User.create( username: "student", password: "1234", password_confirmation: "1234",role: "student")
+User.create( username: "student", password: "1234", password_confirmation: "1234",role: "student", userlogin: nil)
 
-User.create( username: "hayriye", password: "1234", password_confirmation: "1234",role: "student")
+User.create( username: "hayriye", password: "1234", password_confirmation: "1234",role: "student", userlogin: nil)
 
-User.create( username: "admin", password: "1234", password_confirmation: "1234",role: "admin")
+User.create( username: "admin", password: "1234", password_confirmation: "1234",role: "admin", userlogin: nil)
 
 
 

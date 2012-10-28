@@ -1,10 +1,13 @@
 class AnketsController < ApplicationController
+  
 
   def index
 	@ankets = Anket.all
 	
-  
+	
   end
+  
+  
   
   def show
 	@anket = Anket.new
@@ -30,14 +33,31 @@ class AnketsController < ApplicationController
 			:userid => @student.id, 
 			:answer => @anket.answer, 
 			:name => @student.username,
+			
 		)
 	
 	
 	else
-		@find.update_attribute(:answer, @anket.answer)
+	
+		@time_finish = @find.created_at + 1.minutes
+		if @student.userlogin >= @time_finish
+			redirect_to ("/finish")
+		
+		else
+			@find.update_attribute(:answer, @anket.answer)
+		end
+		
 		
 	end
 	
+	
+	
+	
+  end
+  
+  def finish
+	
+    
   end
   
   

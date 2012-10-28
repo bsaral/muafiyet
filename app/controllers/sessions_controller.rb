@@ -5,10 +5,13 @@ class SessionsController < ApplicationController
 
  def create
     user = User.find_by_username(params[:username])
+	
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
+        user.update_attribute(:userlogin, Time.now)
               case user.role
               when "student"
+				
                 redirect_to ("/anket")
               when "admin"
                 redirect_to ("/admin")
@@ -19,6 +22,8 @@ class SessionsController < ApplicationController
         redirect_to root_url
 	end
  end
+ 
+ 
 
  def destroy
     session[:user_id] = nil
