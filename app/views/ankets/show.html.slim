@@ -1,0 +1,14 @@
+.container
+  .hero-unit style="position:absolute;top:80px;left:330px;"
+    h2 style="color:#990033"
+      | Cevabınız  
+      span style="color:green;font-weight:bold;" = @anket.answer   
+      |   Olarak Kaydedilmiştir.
+  .row style="position:absolute;top:280px;left:600px;"
+    = button_to "DEĞİŞTİR", anket_path, :class => 'btn btn-large btn-success', style: "width:120px;position:relative;top:50px;left:-1.5in;"
+    = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', style: "width:120px;position:relative;top:-10px;left:1.5in;"
+.well.navbar-fixed-bottom
+  .container
+    .row
+      .span4.offset4
+        span.copyright Copyright © BETÜL SARAL 2012

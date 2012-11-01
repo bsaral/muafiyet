@@ -1,0 +1,27 @@
+.container
+  .hero-unit style="position:absolute;top:120px;left:180px;"
+    h2 style="color:#990033" Muafiyet Sınavı
+    p
+      a.btn.btn-warning.btn-large style="position:relative;top:30px;left:40px;"   Learn more &raquo;
+     
+.row
+  .span8.offset2
+    div style="position:absolute;top:130px;left:8in"
+      = form_tag sessions_path,:class=>"form-horizontal" do
+        legend= t 'k_g'
+        - if flash[:error]
+          .alert.alert-error
+            = flash[:error]
+        .control-group
+          label.control-label= t 'k_a'
+          = text_field_tag :username, params[:username], :style => "height:30px;"
+        div class="control-group>"
+          label.control-label= t 'k_p'
+        
+          = password_field_tag :password 
+        = submit_tag "Giriş Yap", :class => "btn btn-warning", :style => "position:relative;top:30px;left:-150px;"
+.well.navbar-fixed-bottom
+  .container
+    .row
+      .span4.offset4
+        span.copyright Copyright © BETÜL SARAL 2012
