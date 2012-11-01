@@ -18,7 +18,7 @@
         div class="control-group>"
           label.control-label= t 'k_p'
         
-          = password_field_tag :password 
+          = password_field_tag :password , nil ,  :style => "height:30px;"
         = submit_tag "Giriş Yap", :class => "btn btn-warning", :style => "position:relative;top:30px;left:-150px;"
 .well.navbar-fixed-bottom
   .container
