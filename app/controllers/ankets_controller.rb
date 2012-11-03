@@ -57,6 +57,9 @@ class AnketsController < ApplicationController
   end
   
   def finish
+	@student = User.find(session[:user_id])
+	@find = Anket.find_by_userid(@student.id)
+	
 	
     
   end

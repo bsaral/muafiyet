@@ -1,7 +1,12 @@
 .container
-  .hero-unit style="position:absolute;top:80px;left:330px;"
-    h2 style="color:#990033" Cevabınızı Değiştirme Süreniz Dolmuştur. 
-  = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', style: "width:120px;position:relative;top:300px;left:4in;"
+  .hero-unit style="position:absolute;top:80px;left:330px;width:6in;"
+    h2 style="color:#990033" 
+		|Sinava girme isteginizi 
+		span style="color:green;font-weight:bold;" = @find.answer   
+		|  Olarak Kaydettiniz.
+		|Degistirme icin taninan sure doldu, o yuzden degisiklige izin verilmez.
+    
+  = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', style: "width:120px;position:relative;top:370px;left:4in;"
 .well.navbar-fixed-bottom
   .container
     .row
