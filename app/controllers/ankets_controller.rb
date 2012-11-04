@@ -61,7 +61,6 @@ class AnketsController < ApplicationController
 	@find = Anket.find_by_userid(@student.id)
 	
 	
-    
   end
   
   
