@@ -4,7 +4,6 @@
       div style="position:absolute;top:130px"
         = form_tag({:action => 'update'} ,{:class=>"form-horizontal"}) do
           legend Parola Değiştir
-          
           - if flash[:error]
             .alert.alert-error
               = flash[:error]
@@ -14,7 +13,8 @@
           div class="control-group>"
             label.control-label Yeni Parola(Tekrar)
             = password_field_tag :new_password_confirmation, nil ,  :style => "height:30px;"
-          =  button_to "Kaydet", { :controller => "sessions" , :action => "update",  :method => :get }, :class => 'btn btn-large btn-warning', :style => "position:relative;top:30px;left:-150px;"
+          =  button_to "Kaydet", { :controller => "sessions" , :action => "update",  :method => :get }, :class => 'btn btn-large btn-warning', \
+			:style => "position:relative;top:30px;left:-150px;"
           
           
 .well.navbar-fixed-bottom

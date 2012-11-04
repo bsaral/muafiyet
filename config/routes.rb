@@ -10,10 +10,6 @@ Exam::Application.routes.draw do
   
   
   
-  
-  
- 
-  
   resources :ankets
   match "anket" => "ankets#index" ,:as => "anket"
   match "ankets/:id" => "ankets#show" ,:as => "show"
