@@ -1,0 +1,20 @@
+.container
+  .row
+    .span10.offset3
+      div style="position:absolute;top:130px"
+
+		= form_for @password do |f|
+		  - if @password.errors.any?
+			#error_explanation
+			  h2 = "#{pluralize(@password.errors.count, "error")} prohibited this password from being saved:"
+			  ul
+				- @password.errors.full_messages.each do |message|
+				  li = message
+
+		  .field
+			= f.label :new_password
+			= f.text_field :new_password
+		  .field
+			= f.label :new_password_confirmation
+			= f.text_field :new_password_confirmation
+		  .actions = f.submit 'Save'

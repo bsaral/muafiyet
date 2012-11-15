@@ -1,5 +1,7 @@
 Exam::Application.routes.draw do
 
+  resources :passwords
+
   root :to=>"home#index"
   	
   resources :sessions

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         user.update_attribute(:userlogin, Time.now)
               case user.role
               when "student"
-				redirect_to ("/update")
+				redirect_to ("/anket")
               when "admin"
                 redirect_to ("/admin")
               end
@@ -22,24 +22,7 @@ class SessionsController < ApplicationController
 	end
  end
  
- def update
-	@user = User.find_by_id(session[:user_id])
-	@password = Password.new(params[:new_password])
-	
-	
-		
-	if @password.new_password == @password.new_password_confirmation
-		
-		@user.update_attribute(:password, @password.new_password)
-		@user.update_attribute(:password_confirmation, @password.new_password_confirmation)
-		
-	else
-		flash[:error] = "guncellenmedi"
-	end
-		
-	
-	
- end
+ 
  
  
 

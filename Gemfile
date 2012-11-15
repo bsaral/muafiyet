@@ -4,7 +4,7 @@ gem 'rails', '3.2.3'
 gem 'twitter-bootstrap-rails'
 gem 'cancan'
 gem 'rails-i18n'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem "carrierwave"
 gem "mini_magick"
 gem 'sqlite3'

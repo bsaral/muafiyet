@@ -3,6 +3,7 @@ class CreatePasswords < ActiveRecord::Migration
     create_table :passwords do |t|
       t.string :new_password
       t.string :new_password_confirmation
+      
 
       t.timestamps
     end

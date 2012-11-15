@@ -1,0 +1,19 @@
+.container
+  .hero-unit
+    
+		p#notice = notice
+
+		p
+		  strong New password :
+		  = @password.new_password
+		  
+		p
+		  strong New password Confirmation:
+		  = @password.new_password_confirmation
+		p
+		  strong user:
+		  = @user.username
+
+		= link_to 'Edit', edit_password_path(@password)
+		'|
+		= link_to 'Back', passwords_path
