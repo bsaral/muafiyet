@@ -1,7 +1,5 @@
 Exam::Application.routes.draw do
 
-  resources :passwords
-
   root :to=>"home#index"
   	
   resources :sessions
@@ -18,8 +16,13 @@ Exam::Application.routes.draw do
   match "admin" => "ankets#admin" ,:as => "admin"
   match "finish" => "ankets#finish" ,:as => "finish"
   
+  resources :passwords
+  match "password" => "passwords#new" 
+  
+  
   
   match "lang/:locale" => "home#lang" 
+  
   
   
   

@@ -1,9 +1,10 @@
 .container
   .row
-    .span10.offset3
-      div style="position:absolute;top:130px"
+    .span11.offset3
+      div style="position:absolute;top:100px;left:5.3in;width:300px;"
 
 		= form_for @password do |f|
+		  legend Parola Değiştir
 		  - if @password.errors.any?
 			#error_explanation
 			  h2 = "#{pluralize(@password.errors.count, "error")} prohibited this password from being saved:"
@@ -12,9 +13,15 @@
 				  li = message
 
 		  .field
-			= f.label :new_password
-			= f.text_field :new_password
+			= f.label "Yeni Parola"
+			= f.text_field :new_password,:style => "height:30px;width:300px;"
 		  .field
-			= f.label :new_password_confirmation
-			= f.text_field :new_password_confirmation
-		  .actions = f.submit 'Save'
+			= f.label "Yeni Parola(*Tekrar)"
+			= f.text_field :new_password_confirmation,:style => "height:30px;width:300px;"
+		  .actions = f.submit 'Save',:class => "btn btn-warning"
+		  
+.well.navbar-fixed-bottom
+  .container
+    .row
+      .span4.offset4
+        span.copyright Copyright © BETÜL SARAL 2012

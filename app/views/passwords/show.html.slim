@@ -1,19 +1,12 @@
 .container
-  .hero-unit
-    
-		p#notice = notice
+  .hero-unit.konum3
+    h2 style="color:#990033" Parolanız Güncellenmiştir.
+		
+  = button_to "DEVAM ET", anket_url, :class => 'btn btn-large btn-success',\
+	style: "width:120px;position:relative;top:310px;left:4in;"
 
-		p
-		  strong New password :
-		  = @password.new_password
-		  
-		p
-		  strong New password Confirmation:
-		  = @password.new_password_confirmation
-		p
-		  strong user:
-		  = @user.username
-
-		= link_to 'Edit', edit_password_path(@password)
-		'|
-		= link_to 'Back', passwords_path
+.well.navbar-fixed-bottom
+  .container
+    .row
+      .span4.offset4
+        span.copyright Copyright © BETÜL SARAL 2012
