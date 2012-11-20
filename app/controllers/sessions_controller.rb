@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         user.update_attribute(:userlogin, Time.now)
               case user.role
               when "student"
-				redirect_to ("/password")
+		redirect_to ("/password")
               when "admin"
                 redirect_to ("/admin")
               end
