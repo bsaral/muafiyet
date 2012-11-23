@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 	
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-<<<<<<< HEAD
         @password_id = Password.find_by_userid(session[:user_id])
         user.update_attribute(:userlogin, Time.now)
               if user.role == "student" && @password_id == nil
@@ -19,17 +18,6 @@ class SessionsController < ApplicationController
 			  end
               if user.role == "admin"
                 redirect_to ("/admin")
-=======
-              case user.role
-              when "student"
-<<<<<<< HEAD
-                redirect_to ("/deneme")
-=======
-		redirect_to ("/password")
->>>>>>> fe6b3a778f75447454c3183d3318c9c7dfadec8a
-              when "admin"
-                redirect_to ("/deneme")
->>>>>>> 7293cae1cc59a3db67649870be746640422320ce
               end
          
     else
@@ -39,9 +27,6 @@ class SessionsController < ApplicationController
  end
  
  
- 
- 
-
  def destroy
  
     session[:user_id] = nil

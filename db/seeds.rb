@@ -6,8 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-<<<<<<< HEAD
 User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student", userlogin: nil)
 
 User.create( username: "hayri", password: "123", password_confirmation: "123",role: "student", userlogin: nil)
@@ -19,7 +17,4 @@ User.create( username: "hayriye", password: "1234", password_confirmation: "1234
 User.create( username: "admin", password: "1234", password_confirmation: "1234",role: "admin", userlogin: nil)
 
 
-=======
-User.create(:username => "bsaral", :password => "1234", :password_confirmation => "1234",:role => "student")
->>>>>>> 7293cae1cc59a3db67649870be746640422320ce
 
