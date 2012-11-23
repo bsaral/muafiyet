@@ -25,7 +25,7 @@ class PasswordsController < ApplicationController
       end
     end
     
-    if @password_id == nil
+    if @password_id == nil 
     
 		Password.create( 
 		
