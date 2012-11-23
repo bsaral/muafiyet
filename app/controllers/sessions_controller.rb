@@ -22,7 +22,11 @@ class SessionsController < ApplicationController
 =======
               case user.role
               when "student"
+<<<<<<< HEAD
                 redirect_to ("/deneme")
+=======
+		redirect_to ("/password")
+>>>>>>> fe6b3a778f75447454c3183d3318c9c7dfadec8a
               when "admin"
                 redirect_to ("/deneme")
 >>>>>>> 7293cae1cc59a3db67649870be746640422320ce
