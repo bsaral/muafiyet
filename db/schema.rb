@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121114233511) do
+ActiveRecord::Schema.define(:version => 20121123093712) do
 
   create_table "ankets", :force => true do |t|
     t.string   "answer"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(:version => 20121114233511) do
     t.string   "name"
     t.integer  "userid"
   end
-  
+
   create_table "passwords", :force => true do |t|
-    t.string  "new_password"
-    t.string  "new_password_confirmation"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "new_password"
+    t.string   "new_password_confirmation"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "userid"
   end
 
   create_table "times", :force => true do |t|

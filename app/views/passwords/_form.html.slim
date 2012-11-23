@@ -5,6 +5,7 @@
 
 		= form_for @password do |f|
 		  legend Parola Değiştir
+		  = @password_id
 		  - if @password.errors.any?
 			#error_explanation
 			  h2 = "#{pluralize(@password.errors.count, "error")} prohibited this password from being saved:"

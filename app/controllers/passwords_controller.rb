@@ -12,11 +12,12 @@ class PasswordsController < ApplicationController
   def create
     @password = Password.new(params[:password])
     @user = User.find_by_id(session[:user_id])
-
+    @password_id = Password.find_by_userid(session[:user_id])
+    
     respond_to do |format|
       if @password.save
-        format.html { redirect_to @password, notice: 'Password was successfully created.' }
-        format.json { render json: @password, status: :created, location: @password }
+        format.html { redirect_to ("/anket"), notice: 'Password was successfully created.' }
+        format.json { render json: ("/anket"), status: :created, location: @password }
         
       else
         format.html { render action: "new" }
@@ -24,7 +25,19 @@ class PasswordsController < ApplicationController
       end
     end
     
-    @user.update_attribute(:password, @password.new_password)
+    if @password_id == nil
+    
+		Password.create( 
+		
+			:userid => @user.id,
+			:new_password => @password.new_password,
+			:new_password_confirmation => @password.new_password_confirmation
+		)
+		
+		@user.update_attribute(:password, @password.new_password)
+	
+	end
+		
   end
 
 

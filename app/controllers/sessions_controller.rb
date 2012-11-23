@@ -8,11 +8,15 @@ class SessionsController < ApplicationController
 	
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
+        @password_id = Password.find_by_userid(session[:user_id])
         user.update_attribute(:userlogin, Time.now)
-              case user.role
-              when "student"
+              if user.role == "student" && @password_id == nil
 				redirect_to ("/password")
-              when "admin"
+			  end
+			  if user.role == "student" && @password_id != nil
+				redirect_to ("/anket")
+			  end
+              if user.role == "admin"
                 redirect_to ("/admin")
               end
          
