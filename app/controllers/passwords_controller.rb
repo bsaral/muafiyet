@@ -29,9 +29,9 @@ class PasswordsController < ApplicationController
     
 		Password.create( 
 		
-			:userid => @user.id,
-			:new_password => @password.new_password,
-			:new_password_confirmation => @password.new_password_confirmation
+			userid: @user.id,
+			new_password: @password.new_password,
+			new_password_confirmation: @password.new_password_confirmation
 		)
 		
 		@user.update_attribute(:password, @password.new_password)
