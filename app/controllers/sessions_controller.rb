@@ -9,9 +9,13 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
               case user.role
               when "student"
+<<<<<<< HEAD
                 redirect_to ("/deneme")
+=======
+                redirect_to ("/anket")
+>>>>>>> ccc9dd137e36e4a3d59714e530e7be707223c04d
               when "admin"
-                redirect_to ("/deneme")
+                redirect_to ("/admin")
               end
          
     else

@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="hero-unit" style = "position:absolute;top:120px;left:180px;" >
-		<h2 style = "color:#990033">Muafiyet Sınavı</h2>
+		<h2 style = "color:#990033"><%= t 'hello' %></h2>
 		 <p ><a class="btn btn-warning btn-large" style = "position:relative;top:30px;left:40px;" >Learn more &raquo;</a></p>
 	</div>
 	
@@ -9,21 +9,22 @@
     <div class="span8 offset2">
     <div style= "position:absolute;top:130px;left:8in">
       <%= form_tag sessions_path,:class=>"form-horizontal" do %>
-      <legend>Kullanıcı Girişi</legend>
+      <legend><%= t 'k_g' %></legend>
         <% if flash[:error] %>
           <div class="alert alert-error">
             <%= flash[:error] %>
           </div>
         <% end %>
         <div class="control-group">
-          <label class="control-label">Kullanıcı Adınız</label>
+          <label class="control-label"><%= t 'k_a' %></label>
 	  <%= text_field_tag :username, params[:username] %>
         </div>
         <div class="control-group>">
-          <label class="control-label">Parola</label>
+          <label class="control-label"><%= t 'k_p' %></label>
 	  <%= password_field_tag :password %>
         </div>
-        <%= submit_tag "Giriş Yap",:class =>"btn btn-warning" %>
+        <%= submit_tag t 'k_s', :class => "btn btn-warning" %>
+        
       <% end %>
       </div>
     </div>

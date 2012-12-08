@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="hero-unit" style = "position:absolute;top:80px;left:330px;" > 
+		<h2 style = "color:#990033">Muafiyet Sınavına Girmek İster misiniz ? </h2>
+	</div>
+	<div class="row">
+		<div class="span10 offset3">
+			<div style= "position:absolute;top:280px">
+				<%= button_to "EVET", { :action => "show", :id => 1, :method => :get }, :class => 'btn btn-large btn-success', style: "width:120px;position:relative;left:-20px;top:50px;" %>
+				<%= button_to "HAYIR", { :action => "show", :id => 2,  :method => :get }, :class => 'btn btn-large btn-danger', style: "width:120px;position:relative;left:330px;top:-10px;" %>
+				
+			</div>
+		</div>
+	</div>
+</div>

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :password ,:password_confirmation,:role
   has_secure_password
   
+  
   ROLES = %w[guest admin]
 
   def role?(base_role)
