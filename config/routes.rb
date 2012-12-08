@@ -1,11 +1,14 @@
 Exam::Application.routes.draw do
 
-  root :to=>"home#index"	
-  
+  root :to=>"home#index"
+  	
+  resources :sessions
   get "sessions/new"
   get "login" => "sessions#new", :as => "login"
   match "logout" => "sessions#destroy"
-  resources :sessions
+  match "update" => "sessions#update"
+  
+  
   
   resources :ankets
   match "anket" => "ankets#index" ,:as => "anket"
@@ -13,8 +16,13 @@ Exam::Application.routes.draw do
   match "admin" => "ankets#admin" ,:as => "admin"
   match "finish" => "ankets#finish" ,:as => "finish"
   
+  resources :passwords
+  match "password" => "passwords#new" 
+  
+  
   
   match "lang/:locale" => "home#lang" 
+  
   
   
   

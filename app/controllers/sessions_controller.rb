@@ -8,7 +8,9 @@ class SessionsController < ApplicationController
 	
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
+        @password_id = Password.find_by_userid(session[:user_id])
         user.update_attribute(:userlogin, Time.now)
+<<<<<<< HEAD
               case user.role
               when "student"
 <<<<<<< HEAD
@@ -23,6 +25,17 @@ class SessionsController < ApplicationController
               when "admin"
                 redirect_to ("/admin")
               end
+=======
+        if user.role == "student" && @password_id == nil
+			redirect_to ("/password")
+		end
+		if user.role == "student" && @password_id != nil
+			redirect_to ("/anket")
+		end
+        if user.role == "admin"
+            redirect_to ("/admin")
+        end
+>>>>>>> fa38bf7055b05e2d0a5f3c3cd2a7415701d69ce0
          
     else
         flash[:error] = "Kullanici adin ve/veya parolan hatali"
@@ -31,9 +44,11 @@ class SessionsController < ApplicationController
  end
  
  
-
  def destroy
+ 
     session[:user_id] = nil
     redirect_to root_url
+ 
  end
+ 
 end
