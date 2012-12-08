@@ -1,0 +1,19 @@
+.container
+  .hero-unit
+    h3 Listing Answers
+    table.table.table-striped.display
+      thead
+        tr
+          th NO
+          th Username
+          th Answer
+          th Created at
+          th Updated at
+      tbody
+        - @anket.each do |anket|
+          tr
+            td= anket.userid
+            td= anket.name
+            td= anket.answer
+            td= anket.created_at
+            td= anket.updated_at

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021210252) do
+ActiveRecord::Schema.define(:version => 20121028202146) do
 
   create_table "ankets", :force => true do |t|
     t.string   "answer"
@@ -19,14 +19,23 @@ ActiveRecord::Schema.define(:version => 20121021210252) do
     t.datetime "updated_at", :null => false
     t.string   "name"
     t.integer  "userid"
+    
+  end
+
+  create_table "times", :force => true do |t|
+    t.datetime "time_login"
+    t.datetime "time_start"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
-    t.string   "role",            :default => "guest"
+    t.datetime "created_at"
+    t.datetime "updated_at",                             :null => false
+    t.string   "role",            :default => "student"
+    t.datetime "userlogin"
   end
 
 end

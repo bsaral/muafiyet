@@ -5,13 +5,19 @@ class SessionsController < ApplicationController
 
  def create
     user = User.find_by_username(params[:username])
+	
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
+        user.update_attribute(:userlogin, Time.now)
               case user.role
               when "student"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 redirect_to ("/deneme")
 =======
+=======
+				
+>>>>>>> da139b698b36f297658da8bcc08bf0db756d0a4f
                 redirect_to ("/anket")
 >>>>>>> ccc9dd137e36e4a3d59714e530e7be707223c04d
               when "admin"
@@ -22,10 +28,12 @@ class SessionsController < ApplicationController
         flash[:error] = "Kullanici adin ve/veya parolan hatali"
         redirect_to root_url
 	end
-   end
+ end
+ 
+ 
 
-     def destroy
-       session[:user_id] = nil
-       redirect_to root_url
-    end
+ def destroy
+    session[:user_id] = nil
+    redirect_to root_url
+ end
 end

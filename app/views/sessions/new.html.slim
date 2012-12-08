@@ -1,0 +1,16 @@
+.container
+  .row
+    .span10.offset3
+      div style="position:absolute;top:130px"
+        = form_tag sessions_path,:class=>"form-horizontal" do
+          legend Kullanıcı Girişi
+          - if flash[:error]
+            .alert.alert-error
+              = flash[:error]
+          .control-group
+            label.control-label Kullanıcı Adınız
+            = text_field_tag :username, params[:username]
+          div class="control-group>"
+            label.control-label Parola
+            = password_field_tag :password
+          = submit_tag "Giriş Yap",:class =>"btn btn-warning"

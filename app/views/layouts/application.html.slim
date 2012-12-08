@@ -1,0 +1,39 @@
+doctype
+html
+  head
+    title Muafiyet
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand href="/" style="color:#990033" Muafiyet Sınavı
+          .nav-collapse
+            ul.nav
+              li.active
+                a href="/" Ana Sayfa
+            ul.nav.pull-right
+              - if current_user
+                li= link_to current_user.username,""
+                li
+                  = link_to "Çıkış",logout_url
+              - unless session[:admin]
+                li.dropdown
+                  a.dropdown-toggle data-toggle="dropdown" href="#"
+                    = t 'home.languages'
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a href="/lang/tr" Türkçe
+                    li.divider
+                    li
+                      a href="/lang/en" English
+              li
+                - if flash[:error]
+                  .alert.alert-error
+                    = flash[:error]
+              ul
+        /! /.nav-collapse
+    = yield

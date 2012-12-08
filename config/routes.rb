@@ -11,6 +11,7 @@ Exam::Application.routes.draw do
   match "anket" => "ankets#index" ,:as => "anket"
   match "ankets/:id" => "ankets#show" ,:as => "show"
   match "admin" => "ankets#admin" ,:as => "admin"
+  match "finish" => "ankets#finish" ,:as => "finish"
   
   
   match "lang/:locale" => "home#lang" 
