@@ -15,6 +15,7 @@ Exam::Application.routes.draw do
   match "ankets/:id" => "ankets#show" ,:as => "show"
   match "admin" => "ankets#admin" ,:as => "admin"
   match "finish" => "ankets#finish" ,:as => "finish"
+  match "finish_sec" => "ankets#finish_sec" ,:as => "finish_sec"
   
   resources :passwords
   match "password" => "passwords#new" 

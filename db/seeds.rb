@@ -8,18 +8,7 @@
 
 User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student")
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-User.create(:username => "bsaral", :password => "1234", :password_confirmation => "1234",:role => "student")
-=======
-User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student")
-=======
-User.create( username: "bsaral", password: "1234", password_confirmation: "1234",role: "student", userlogin: nil)
->>>>>>> da139b698b36f297658da8bcc08bf0db756d0a4f
-=======
 User.create( username: "hayri", password: "123", password_confirmation: "123",role: "student")
->>>>>>> fa38bf7055b05e2d0a5f3c3cd2a7415701d69ce0
 
 User.create( username: "student", password: "1234", password_confirmation: "1234",role: "student")
 
@@ -28,8 +17,5 @@ User.create( username: "hayriye", password: "1234", password_confirmation: "1234
 User.create( username: "admin", password: "1234", password_confirmation: "1234",role: "admin")
 
 
-<<<<<<< HEAD
->>>>>>> ccc9dd137e36e4a3d59714e530e7be707223c04d
-=======
->>>>>>> fa38bf7055b05e2d0a5f3c3cd2a7415701d69ce0
+
 
