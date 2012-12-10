@@ -43,9 +43,9 @@ class AnketsController < ApplicationController
 		)
 		
 	else
-	    @find.update_attribute(:time, Time.now)
+	    	@find.update_attribute(:time, Time.now)
 		@time_finish = Time.zone.parse("2012-12-10 00:12 ")
-	    #@time_finish = Time.zone.parse("2012-12-18 22:34 ")
+	    	#@time_finish = Time.zone.parse("2012-12-18 22:34 ")
 		if @student.userlogin >= @time_finish or Time.now >= @time_finish
 			redirect_to ("/finish")
 		else
