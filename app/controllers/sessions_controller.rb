@@ -11,11 +11,11 @@ class SessionsController < ApplicationController
         @password_id = Password.find_by_userid(session[:user_id])
         user.update_attribute(:userlogin, Time.now)
         if user.role == "student" && @password_id == nil
-			redirect_to ("/password")
-		end
-		if user.role == "student" && @password_id != nil
-			redirect_to ("/anket")
-		end
+		redirect_to ("/password")
+	end
+	if user.role == "student" && @password_id != nil
+		redirect_to ("/anket")
+	end
         if user.role == "admin"
             redirect_to ("/admin")
         end
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     else
         flash[:error] = "Kullanici adin ve/veya parolan hatali"
         redirect_to root_url
-	end
+    end
  end
  
  
