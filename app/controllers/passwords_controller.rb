@@ -1,3 +1,4 @@
+# encoding: utf-8
 class PasswordsController < ApplicationController
   
   def new
@@ -15,29 +16,24 @@ class PasswordsController < ApplicationController
     @password_id = Password.find_by_userid(session[:user_id])
     
     respond_to do |format|
-      if @password.save
-        format.html { redirect_to ("/anket"), notice: 'Password was successfully created.' }
-        format.json { render json: ("/anket"), status: :created, location: @password }
-        
-      else
-        format.html { render action: "new" }
-        format.json { render json: @password.errors, status: :unprocessable_entity }
-      end
-    end
-    
-    if @password_id == nil 
-    
+      if @password_id == nil 
 		Password.create( 
 		
 			userid: @user.id,
 			new_password: @password.new_password,
 			new_password_confirmation: @password.new_password_confirmation
 		)
-		
-		@user.update_attribute(:password, @password.new_password)
-	
-	end
-		
+		if @password.new_password == @password.new_password_confirmation
+			@user.update_attribute(:password, @password.new_password)
+			format.html { redirect_to ("/anket"), notice: 'Password was successfully created.' }
+			format.json { render json: ("/anket"), status: :created, location: @password }
+		else
+			flash[:error] = "Parola Eşleşmesinde Hata Var!"
+			format.html { render action: "new" }
+			format.json { render json: @password.errors, status: :unprocessable_entity }
+		end
+      end
+    end
   end
 
 

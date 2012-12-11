@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SessionsController < ApplicationController
  def new
     redirect_to deneme_index_path if session[:user_id]
