@@ -28,11 +28,22 @@ class PasswordsController < ApplicationController
 			format.html { redirect_to ("/anket"), notice: 'Password was successfully created.' }
 			format.json { render json: ("/anket"), status: :created, location: @password }
 		else
-			flash[:error] = "Parola Eşleşmesinde Hata Var!"
 			format.html { render action: "new" }
 			format.json { render json: @password.errors, status: :unprocessable_entity }
+			flash[:error] = "Parola Eşleşmesinde Hata Var!"
 		end
-      end
+		
+	  else
+		if @password.new_password == @password.new_password_confirmation
+			@user.update_attribute(:password, @password.new_password)
+			format.html { redirect_to ("/anket"), notice: 'Password was successfully created.' }
+			format.json { render json: ("/anket"), status: :created, location: @password }
+		else
+			format.html { render action: "new" }
+			format.json { render json: @password.errors, status: :unprocessable_entity }
+			flash[:error] = "Parola Eşleşmesinde Hata Var!"
+		end
+	  end
     end
   end
 
