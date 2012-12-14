@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 				redirect_to ("/anket")
 			end
 		end
-	end
+	
         if user.role == "admin"
             redirect_to ("/admin")
         end
