@@ -1,8 +1,9 @@
 .container
   .hero-unit.konum
     h2 style="color:#990033"
-      | Cevabınız   
-      span style="color:green;font-weight:bold;"  =  @anket.answer   
+      | Cevabınız  
+      - @find = Anket.find_by_userid(session[:user_id])
+      span style="color:green;font-weight:bold;" = @find.answer   
       |   Olarak Kaydedilmiştir. Son Değiştirme Tarihiniz : 
       - @time_finish = Time.zone.parse("2012-12-09 22:34 ")
 	  span  style="color:green;font-weight:bold;" = @time_finish.strftime ( "%d %B %Y  %H:%M")

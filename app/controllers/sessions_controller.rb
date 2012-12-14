@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 		end
 		if user.role == "student" && @password_id != nil
 			unless @find.answer == nil 
-				redirect_to ("/ankets/:id")
+				redirect_to ("/show_sec")
 			else
 				redirect_to ("/anket")
 			end

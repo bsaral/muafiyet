@@ -1,4 +1,4 @@
 class Anket < ActiveRecord::Base
-  attr_accessible :answer,:name,:userid, :time
+  attr_accessible :answer,:name,:userid, :time,:anketid
   belongs_to :user
 end

@@ -13,6 +13,7 @@ Exam::Application.routes.draw do
   resources :ankets
   match "anket" => "ankets#index" ,:as => "anket"
   match "ankets/:id" => "ankets#show" ,:as => "show"
+  match "show_sec" => "ankets#show_sec" 
   match "admin" => "ankets#admin" ,:as => "admin"
   match "finish" => "ankets#finish" ,:as => "finish"
   match "finish_sec" => "ankets#finish_sec" ,:as => "finish_sec"
