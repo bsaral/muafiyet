@@ -6,7 +6,7 @@ class AnketsController < ApplicationController
 	@student = User.find(session[:user_id])
 	@find = Anket.find_by_userid(@student.id)
 	
-	@time_finish = Time.zone.parse("2012-12-11 11:19 ")
+	@time_finish = Time.zone.parse("2012-12-14 10:59 ")
 	#@time_finish = Time.zone.parse("2012-12-18 22:34 ")
 	if @student.userlogin >= @time_finish
 		if @find == nil
@@ -44,7 +44,7 @@ class AnketsController < ApplicationController
 		
 	else
 	    @find.update_attribute(:time, Time.now)
-		@time_finish = Time.zone.parse("2012-12-11 11:19 ")
+		@time_finish = Time.zone.parse("2012-12-14 10:59 ")
 	    #@time_finish = Time.zone.parse("2012-12-18 22:34 ")
 		if @student.userlogin >= @time_finish or Time.now >= @time_finish
 			redirect_to ("/finish")
