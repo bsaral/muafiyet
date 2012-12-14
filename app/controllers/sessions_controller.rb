@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
         @find = Anket.find_by_userid(session[:user_id])
         user.update_attribute(:userlogin, Time.now)
         if user.role == "student" && @password_id == nil
-<<<<<<< HEAD
 			redirect_to ("/password")
 		end
 		if user.role == "student" && @password_id != nil
@@ -22,15 +21,6 @@ class SessionsController < ApplicationController
 			else
 				redirect_to ("/anket")
 			end
-=======
-		redirect_to ("/password")
-	end
-	if user.role == "student" && @password_id != nil
-		unless @find.answer == nil 
-			redirect_to ("/ankets/:id")
-		else
-			redirect_to ("/anket")
->>>>>>> d579ecae39cb0b71aef4e35324ed2e27db852a43
 		end
 	end
         if user.role == "admin"
