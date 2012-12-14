@@ -2,17 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Exemption Exam"
-  k_g: "Login Form"
-  k_a: "Username"
-  k_p: "Password"
-  k_s: "Log in"
-  home: "Home"
   
-  #anket#index
-  
-  question: "Would You Like to Enter the Exemption Exam ? "
-  yes: "YES"
-  no: "NO"
   
   

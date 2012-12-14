@@ -19,17 +19,6 @@ html
                 li= link_to current_user.username,""
                 li
                   = link_to "Çıkış",logout_url
-              - unless session[:admin]
-                li.dropdown
-                  a.dropdown-toggle data-toggle="dropdown" href="#"
-                    = t 'home.languages'
-                    b.caret
-                  ul.dropdown-menu
-                    li
-                      a href="/lang/tr" Türkçe
-                    li.divider
-                    li
-                      a href="/lang/en" English
               li
                 - if flash[:error]
                   .alert.alert-error

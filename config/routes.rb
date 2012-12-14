@@ -20,13 +20,5 @@ Exam::Application.routes.draw do
   resources :passwords
   match "password" => "passwords#new" 
   
-  
-  
-  match "lang/:locale" => "home#lang" 
-  
-  
-  
-  
-
  
 end

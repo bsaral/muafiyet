@@ -2,21 +2,21 @@
   .hero-unit style="position:absolute;top:120px;left:180px;"
     h2 style="color:#990033" Muafiyet Sınavı
     p
-      a.btn.btn-warning.btn-large style="position:relative;top:30px;left:40px;"   Learn more &raquo;
+      a.btn.btn-warning.btn-large style="position:relative;top:30px;left:40px;"   Daha fazla bilgi &raquo;
      
 .row
   .span8.offset2
     div style="position:absolute;top:130px;left:8in"
       = form_tag sessions_path,:class=>"form-horizontal" do
-        legend= t 'k_g'
+        legend= "Kullanıcı Girişi"
         - if flash[:error]
           .alert.alert-error
             = flash[:error]
         .control-group
-          label.control-label= t 'k_a'
+          label.control-label= "Kullanıcı Adı"
           = text_field_tag :username, params[:username], :style => "height:30px;"
         div class="control-group>"
-          label.control-label= t 'k_p'
+          label.control-label= "Parola"
         
           = password_field_tag :password , nil ,  :style => "height:30px;"
         = submit_tag "Giriş Yap", :class => "btn btn-warning", :style => "position:relative;top:30px;left:-150px;"
