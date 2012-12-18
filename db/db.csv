@@ -1,0 +1,6 @@
+username,password,password_confirmation,role
+bsaral,1234,1234,student
+hayri,123,123,student
+student,1234,1234,student
+hayriye,1234,1234,student
+admin,1234,1234,admin
