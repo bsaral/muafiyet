@@ -7,6 +7,7 @@ gem 'rails-i18n'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem "carrierwave"
 gem "mini_magick"
+gem 'roo'
 
 group :development, :test do
   gem 'sqlite3'

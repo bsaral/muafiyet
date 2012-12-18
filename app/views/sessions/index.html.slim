@@ -1,0 +1,12 @@
+.container
+  .hero-unit.konum2
+	h2 Import Users
+	= form_tag import_sessions_path, multipart: true do
+		= file_field_tag :file
+		= submit_tag "Import"
+	
+.well.navbar-fixed-bottom
+  .container
+    .row
+      .span4.offset4
+        span.copyright Copyright © BETÜL SARAL 2012
