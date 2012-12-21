@@ -1,9 +1,11 @@
+
 .container
-  .hero-unit.konum2
-	h2 Import Users
+  .hero-unit.konum4
+	h2 style="color:#990033" Import Users
 	= form_tag import_sessions_path, multipart: true do
+		br/
 		= file_field_tag :file
-		= submit_tag "Import"
+		= submit_tag "Import", :class => "btn  btn-danger", :style => "width:100px;"
 	
 .well.navbar-fixed-bottom
   .container
