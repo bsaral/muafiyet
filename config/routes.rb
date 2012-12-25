@@ -23,7 +23,7 @@ Exam::Application.routes.draw do
   
   resources :sessions do
 	collection { post :import }
-  end	
+  end
   
  
 end

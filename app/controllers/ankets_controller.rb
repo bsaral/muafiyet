@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2012-12-18 12:04 ")
+  @@time_finish = Time.zone.parse("2012-12-25 10:38 ")
   #@@time_finish = Time.zone.parse("2012-12-18 22:34 ")
   
   def index
