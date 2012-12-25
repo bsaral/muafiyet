@@ -17,3 +17,12 @@ User.create(username: "hayriye", password: "1234", password_confirmation: "1234"
 
 User.create(username: "admin", password: "1234", password_confirmation: "1234", role: "admin")
 
+Place.create(classname: "d001")
+
+Place.create(classname: "d002")
+
+Place.create(classname: "d003")
+
+Place.create(classname: "d004")
+
+Place.create(classname: "d005")

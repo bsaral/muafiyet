@@ -33,12 +33,6 @@ class SessionsController < ApplicationController
     end
  end
  
- def import
-  User.import(params[:file])
-  flash[:notice] = "Products imported"
-  redirect_to root_url 
- end
- 
  def destroy
  
     session[:user_id] = nil

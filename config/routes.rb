@@ -21,9 +21,6 @@ Exam::Application.routes.draw do
   resources :passwords
   match "password" => "passwords#new" 
   
-  resources :sessions do
-	collection { post :import }
-  end
   
  
 end
