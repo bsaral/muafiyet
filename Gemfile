@@ -8,6 +8,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem "carrierwave"
 gem "mini_magick"
 gem 'roo'
+gem  "mysql2", ">= 0.3.11"
+gem 'yaml_db'
 
 group :development, :test do
   gem 'sqlite3'

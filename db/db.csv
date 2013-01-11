@@ -1,6 +1,5 @@
-username,password,password_confirmation,role
-bsaral,1234,1234,student
-hayri,123,123,student
-student,1234,1234,student
-hayriye,1234,1234,student
-admin,1234,1234,admin
+1,bsaral,1234,student,11-01-2013,11-01-2013;
+2,hayri,123,student,11-01-2013,11-01-2013;
+3,student,1234,student,11-01-2013,11-01-2013;
+4,hayriye,1234,student,11-01-2013,11-01-2013;
+5,admin,1234,admin,11-01-2013,11-01-2013;
