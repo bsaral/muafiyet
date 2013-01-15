@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  school_name: MyString
+  class_name: MyString
+  floor: MyString
+  exam_date: 2013-01-15 12:07:47
+  desk: MyString
+  total_desk: 1
+
+two:
+  school_name: MyString
+  class_name: MyString
+  floor: MyString
+  exam_date: 2013-01-15 12:07:47
+  desk: MyString
+  total_desk: 1

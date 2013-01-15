@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
  
   attr_accessible :username, :password ,:password_confirmation, :role, :userlogin
-  belongs_to :place
   has_secure_password
   
   

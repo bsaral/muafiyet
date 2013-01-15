@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121225093955) do
+ActiveRecord::Schema.define(:version => 20130115100824) do
 
   create_table "ankets", :force => true do |t|
     t.string   "answer"
@@ -22,18 +22,35 @@ ActiveRecord::Schema.define(:version => 20121225093955) do
     t.datetime "time"
   end
 
+  create_table "classnames", :force => true do |t|
+    t.string   "school_name"
+    t.string   "class_name"
+    t.string   "floor"
+    t.datetime "exam_date"
+    t.string   "desk"
+    t.integer  "total_desk"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "identities", :force => true do |t|
+    t.string   "name"
+    t.string   "no"
+    t.string   "sch_name"
+    t.string   "cls_name"
+    t.string   "flat"
+    t.datetime "exm_date"
+    t.string   "exm_desk"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "passwords", :force => true do |t|
     t.string   "new_password"
     t.string   "new_password_confirmation"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "userid"
-  end
-
-  create_table "places", :force => true do |t|
-    t.string   "classname"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "times", :force => true do |t|

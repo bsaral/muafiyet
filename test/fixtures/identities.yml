@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  no: MyString
+  sch_name: MyString
+  cls_name: MyString
+  flat: MyString
+  exm_date: 2013-01-15 12:08:24
+  exm_desk: MyString
+
+two:
+  name: MyString
+  no: MyString
+  sch_name: MyString
+  cls_name: MyString
+  flat: MyString
+  exm_date: 2013-01-15 12:08:24
+  exm_desk: MyString
