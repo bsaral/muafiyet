@@ -79,7 +79,11 @@ class AnketsController < ApplicationController
   
   def dagitim
 	@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
-	
+
+  end
+  
+  def kimlik
+  
   end
   
   

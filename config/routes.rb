@@ -18,6 +18,7 @@ Exam::Application.routes.draw do
   match "finish" => "ankets#finish" ,:as => "finish"
   match "finish_sec" => "ankets#finish_sec" ,:as => "finish_sec"
   match "dagitim" => "ankets#dagitim" ,:as => "dagitim"
+  match "kimlik" => "ankets#kimlik" ,:as => "kimlik"
   
   resources :passwords
   match "password" => "passwords#new" 
