@@ -1,12 +1,12 @@
 class CreateClassnames < ActiveRecord::Migration
   def change
     create_table :classnames do |t|
-      t.string :school_name
-      t.string :class_name
+      t.string :schoolname
+      t.string :classname
       t.string :floor
-      t.datetime :exam_date
+      t.datetime :examdate
       t.string :desk
-      t.integer :total_desk
+      t.integer :totaldesk
 
       t.timestamps
     end

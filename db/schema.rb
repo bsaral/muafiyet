@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(:version => 20130115100824) do
   end
 
   create_table "classnames", :force => true do |t|
-    t.string   "school_name"
-    t.string   "class_name"
+    t.string   "schoolname"
+    t.string   "classname"
     t.string   "floor"
-    t.datetime "exam_date"
+    t.datetime "examdate"
     t.string   "desk"
-    t.integer  "total_desk"
+    t.integer  "totaldesk"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(:version => 20130115100824) do
   create_table "identities", :force => true do |t|
     t.string   "name"
     t.string   "no"
-    t.string   "sch_name"
-    t.string   "cls_name"
+    t.string   "schname"
+    t.string   "clsname"
     t.string   "flat"
-    t.datetime "exm_date"
-    t.string   "exm_desk"
+    t.datetime "exmdate"
+    t.string   "exmdesk"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

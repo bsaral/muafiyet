@@ -1,7 +1,7 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-15 12:30 ")
-  #@@time_finish = Time.zone.parse("2012-12-18 22:34 ")
+  @@time_finish = Time.zone.parse("2013-01-15 13:30 ")
+  #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   
   def index
 	@ankets = Anket.all
@@ -76,5 +76,25 @@ class AnketsController < ApplicationController
 	@anket = Anket.all
 	
   end
+  
+  def dagitim
+	@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
+	
+  end
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 end
