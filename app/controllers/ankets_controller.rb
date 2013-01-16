@@ -1,7 +1,8 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-15 13:30 ")
+  @@time_finish = Time.zone.parse("2013-01-16 14:00 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
+  @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
   def index
 	@ankets = Anket.all
@@ -74,12 +75,20 @@ class AnketsController < ApplicationController
   
   def admin 
 	@anket = Anket.all
+	@kimlik = Identity.all
+	@anket.each do |anket|
+		@find2 = Identity.find_by_name(anket.name)
+		if @find2 == nil and anket.answer == "EVET"
+			Identity.create(name: anket.name)
+		end
+	end
 	
   end
   
   def dagitim
-	@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
-
+	@class =Classname.find(:all, :limit => 1, :order => 'rand()')
+	@kimlik = Identity.all
+	
   end
   
   def kimlik
