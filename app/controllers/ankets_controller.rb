@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-16 15:00 ") #anket süresi
+  @@time_finish = Time.zone.parse("2013-01-16 16:00 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
@@ -92,10 +92,10 @@ class AnketsController < ApplicationController
 				flat: idc.floor,
 				exmdate: idc.examdate,
 				exmdesk: idc.desk
-			 )
+			    )
 			end
 		end
-	end
+	 end
   end
   
   
@@ -108,20 +108,5 @@ class AnketsController < ApplicationController
   def kimlik
   
   end
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 end
