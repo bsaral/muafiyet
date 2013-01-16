@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-16 14:00 ") #anket süresi
+  @@time_finish = Time.zone.parse("2013-01-16 15:00 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
@@ -77,13 +77,27 @@ class AnketsController < ApplicationController
 	@anket = Anket.all
 	@kimlik = Identity.all
 	@anket.each do |anket|
+		@student2 = User.find_by_username(anket.name)
+		@class =Classname.find(:all, :limit => 1,  :order => 'rand()')
 		@find2 = Identity.find_by_name(anket.name)
 		if @find2 == nil and anket.answer == "EVET"
-			Identity.create(name: anket.name)
+			Identity.create(
+				name: anket.name,
+				no: @student2.okulno
+			)
+			@class.each do |idc|
+				Identity.create(
+				schname: idc.schoolname,
+				clsname: idc.classname,
+				flat: idc.floor,
+				exmdate: idc.examdate,
+				exmdesk: idc.desk
+			 )
+			end
 		end
 	end
-	
   end
+  
   
   def dagitim
 	@class =Classname.find(:all, :limit => 1, :order => 'rand()')

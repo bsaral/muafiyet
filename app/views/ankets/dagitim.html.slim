@@ -4,15 +4,21 @@
     table.table.table-striped.display
       thead
         tr
-          th Name
-          th created
-          th updated
+          th Numara
+          th Kullanıcı İsim
+          th Sınav Yeri
+          th Sınıf
+          th Sıra No
+          th Sınav Tarihi
           
       tbody
         - @kimlik.each do |kimlik|
           tr
+            td= kimlik.no
             td= kimlik.name
-            td= kimlik.created_at
-            td= kimlik.updated_at
+            td= kimlik.schname
+            td= kimlik.clsname
+            td= kimlik.exmdesk
+            td= kimlik.exmdate
             
             
