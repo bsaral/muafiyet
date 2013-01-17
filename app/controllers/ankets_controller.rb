@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-16 16:00 ") #anket süresi
+  @@time_finish = Time.zone.parse("2013-01-17 14:04 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
@@ -12,8 +12,12 @@ class AnketsController < ApplicationController
 	if @student.userlogin >= @@time_finish
 		if @find == nil
 			redirect_to ("/finish_sec")
-		else 
-			redirect_to ("/finish")
+		else
+			if @find.answer == "EVET"
+				redirect_to ("/kimlik")
+			else
+				redirect_to ("/finish_sec")
+			end
 		end
 	end
 	
@@ -48,7 +52,11 @@ class AnketsController < ApplicationController
 	else
 	    @find.update_attribute(:time, Time.now)
 		if @student.userlogin >= @@time_finish or Time.now >= @@time_finish
-			redirect_to ("/finish")
+			if @find.answer == "EVET"
+				redirect_to ("/kimlik")
+			else
+				redirect_to ("/finish_sec")
+			end
 		else
 			@find.update_attribute(:answer, @anket.answer)
 			@find.update_attribute(:time, Time.now)
@@ -67,7 +75,11 @@ class AnketsController < ApplicationController
 	@find = Anket.find_by_userid(session[:user_id])
 	@find.update_attribute(:time, Time.now)
 	if @student.userlogin >= @@time_finish or Time.now >= @@time_finish
-		redirect_to ("/finish")
+		if @find.answer == "EVET"
+			redirect_to ("/kimlik")
+		else
+			redirect_to ("/finish_sec")
+		end
 	end
 	
   end
@@ -81,21 +93,23 @@ class AnketsController < ApplicationController
 		@class =Classname.find(:all, :limit => 1,  :order => 'rand()')
 		@find2 = Identity.find_by_name(anket.name)
 		if @find2 == nil and anket.answer == "EVET"
-			Identity.create(
-				name: anket.name,
-				no: @student2.okulno
-			)
 			@class.each do |idc|
 				Identity.create(
-				schname: idc.schoolname,
-				clsname: idc.classname,
-				flat: idc.floor,
-				exmdate: idc.examdate,
-				exmdesk: idc.desk
+					name: anket.name,
+					no: @student2.okulno,
+					schname: idc.schoolname,
+					clsname: idc.classname,
+					flat: idc.floor,
+					exmdate: idc.examdate,
+					exmdesk: idc.desk,
+					ttldesk: idc.totaldesk
 			    )
+			    #@count = Identity.find_by_clsname(idc.classname)
+				#unless @count.ttldesk == idc.totaldesk
 			end
 		end
 	 end
+	 #@countA = Identity.where( "clsname LIKE ?", "A%").count
   end
   
   
@@ -106,7 +120,10 @@ class AnketsController < ApplicationController
   end
   
   def kimlik
-  
+	@student = User.find(session[:user_id])
+	@kart = Identity.find_by_name(@student.username)
+	@find = Anket.find_by_userid(@student.id)
+	
   end
   
 end

@@ -1,7 +1,33 @@
 .container
   .hero-unit.konum
-    h2 style="color:#990033" 
-    
+    h3 style="color:#990033"  SINAV GİRİŞ KARTI
+	table.table.table-bordered.display
+      thead
+        tr
+          th Öğrenci Numarası
+          td= @kart.no
+        tr
+          th İsim-Soyisim
+          td= @kart.name
+        tr
+          th Sınav Yeri
+          td= @kart.schname
+        tr
+          th Sınav Salon NO
+          td= @kart.flat
+        tr
+          th Sınav Sınıfı
+          td= @kart.clsname
+        tr
+          th Sıra No
+          td= @kart.exmdesk
+        tr
+          th Sınav Tarihi
+          td= @kart.exmdate
+          	
+    = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
+		style: "width:220px;position:absolute;top:4.3in;left:2.3in;"
+            
     
  
 .well.navbar-fixed-bottom

@@ -1,3 +1,3 @@
 class Identity < ActiveRecord::Base
-  attr_accessible :clsname, :exmdate, :exmdesk, :flat, :name, :no, :schname
+  attr_accessible :clsname, :exmdate, :exmdesk, :flat, :name, :no, :schname, :ttldesk
 end
