@@ -1,10 +1,10 @@
 .container
   .row
     .span11.offset3
-      div style="position:absolute;top:100px;left:5.3in;width:300px;"
+      div style="position:absolute;top:100px;left:4.6in;width:300px;"
 
 		= form_for @password do |f|
-		  legend Parola Değiştir
+		  legend style="color:#617C58;" Parola Değiştir
 		  - if flash[:error]
 			.alert.alert-error
 				= flash[:error]
@@ -17,11 +17,17 @@
 
 		  .field
 			= f.label "Yeni Parola"
-			= f.text_field :new_password,:style => "height:30px;width:300px;"
+			= f.text_field :new_password,:style => "height:30px;width:4in;"
+			br
+			br
 		  .field
 			= f.label "Yeni Parola(*Tekrar)"
-			= f.text_field :new_password_confirmation,:style => "height:30px;width:300px;"
-		  .actions = f.submit 'Save',:class => "btn btn-warning"
+			= f.text_field :new_password_confirmation,:style => "height:30px;width:4in;"
+			br
+			br
+			br
+			br
+		  .actions = f.submit 'Kaydet',:class => "btn  btn-danger", :style => "width:4in;height:30px;"
 		  
 .well.navbar-fixed-bottom
   .container

@@ -1,11 +1,11 @@
 .container
-  .hero-unit.konum2
+  .hero-unit style="position:absolute;top:120px;left:290px;"
     h2 style="color:#990033" Muafiyet Sınavına Girmek İster misiniz? 
     
   .row
     .span10.offset3
       div style="position:absolute;top:280px"
-        = button_to "EVET", { :action => "show", :id => 1, :method => :get }, :class => 'btn btn-large btn-success',\
+        = button_to "EVET", { :action => "show", :id => 1, :method => :get }, :class => 'btn btn-large btn-info',\
 			style: "width:120px;position:relative;left:-20px;top:50px;"
         = button_to "HAYIR", { :action => "show", :id => 2,  :method => :get }, :class => 'btn btn-large btn-danger', \
 			style: "width:120px;position:relative;left:330px;top:-10px;"

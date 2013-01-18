@@ -1,5 +1,5 @@
 .container
-  .hero-unit.konum
+  .hero-unit style="position:absolute;top:100px;left:330px;width:6in;"
     h2 style="color:#990033"
       | Cevabınız   
       span style="color:green;font-weight:bold;"  =  @anket.answer   
@@ -7,11 +7,11 @@
       - @time_finish = Time.zone.parse("2012-12-09 22:34 ")
 	  span  style="color:green;font-weight:bold;" = @time_finish.strftime ( "%d %B %Y  %H:%M")
   .row style="position:absolute;top:280px;left:600px;"
-    = button_to "DEĞİŞTİR", anket_path, :class => 'btn btn-large btn-success', \
-		style: "width:120px;position:relative;top:90px;left:-1.5in;"
+    = button_to "DEĞİŞTİR", anket_path, :class => 'btn btn-large btn-info', \
+		style: "width:120px;position:relative;top:120px;left:-1.5in;"
 		
     = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
-		style: "width:120px;position:relative;top:30px;left:1.5in;"
+		style: "width:120px;position:relative;top:60px;left:1.5in;"
 		
 .well.navbar-fixed-bottom
   .container

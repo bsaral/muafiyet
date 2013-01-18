@@ -2,18 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "jquery.countdown.css";
 
 div.hero-unit.konum {
-	position:absolute;top:80px;left:330px;width:6in;
+	position:relative;top:1080px;left:330px;
  }
 
 div.hero-unit.konum2 {
-	position:absolute;top:80px;left:330px;
+	position:absolute;top:1080px;left:330px;
  }
 
 div.hero-unit.konum3 {
-	position:absolute;top:80px;left:420px;
+	position:absolute;top:1080px;left:420px;
  }
  
 div.hero-unit.konum4 {
@@ -27,4 +26,5 @@ span.yazi {
 span.yazi2 {
 	position:relative;left:100px;
  }
-	
+
+
