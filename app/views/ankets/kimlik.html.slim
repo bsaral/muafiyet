@@ -4,25 +4,25 @@
 	table.table.table-bordered.display
       thead
         tr
-          th Öğrenci Numarası
+          th ÖĞRENCİ NUMARASI
           td= @kart.no
         tr
-          th İsim-Soyisim
+          th İSİM-SOYİSİM
           td= @kart.name
         tr
-          th Sınav Yeri
+          th SINAV YERİ
           td= @kart.schname
         tr
-          th Sınav Salon NO
+          th SINAV SALON NO
           td= @kart.flat
         tr
-          th Sınav Sınıfı
+          th SINAV SINIFI
           td= @kart.clsname
         tr
-          th Sıra No
+          th SIRA NO
           td= @kart.exmdesk
         tr
-          th Sınav Tarihi
+          th SINAV TARİHİ
           td= @kart.exmdate
           	
     = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \

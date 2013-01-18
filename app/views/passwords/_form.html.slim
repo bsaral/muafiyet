@@ -4,7 +4,7 @@
       div style="position:absolute;top:100px;left:4.6in;width:300px;"
 
 		= form_for @password do |f|
-		  legend style="color:#617C58;" Parola Değiştir
+		  legend style="color:#254117;" Parola Değiştir
 		  - if flash[:error]
 			.alert.alert-error
 				= flash[:error]
@@ -27,7 +27,7 @@
 			br
 			br
 			br
-		  .actions = f.submit 'Kaydet',:class => "btn  btn-danger", :style => "width:4in;height:30px;"
+		  .actions = f.submit 'Kaydet',:class => "btn  btn-primary", :style => "width:4in;height:30px;"
 		  
 .well.navbar-fixed-bottom
   .container
