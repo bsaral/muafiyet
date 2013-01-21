@@ -5,6 +5,12 @@ User.create(username: "bsaral", password: "1234", password_confirmation: "1234",
 
 User.create(username: "student", password: "1234", password_confirmation: "1234", role: "student", okulno: "12060821")
 
+User.create(username: "student01", password: "1234", password_confirmation: "1234", role: "student", okulno: "12060921")
+
+User.create(username: "student02", password: "1234", password_confirmation: "1234", role: "student", okulno: "12060121")
+
+User.create(username: "student03", password: "1234", password_confirmation: "1234", role: "student", okulno: "12060021")
+
 User.create(username: "hayri", password: "123", password_confirmation: "123", role: "student", okulno: "12060831")
 
 User.create(username: "hayriye", password: "1234", password_confirmation: "1234", role: "student", okulno: "12060841")

@@ -1,28 +1,28 @@
-.container
-  .hero-unit
-    h3 SINIFLARA DAĞILIM TABLOSU
-    table.table.table-striped.display
-      thead
-        tr
-          th Numara
-          th Kullanıcı İsim
-          th Sınav Yeri
-          th Sınıf
-          th Sıra No
-          th Sınav Tarihi
-          
-      tbody
-        - @kimlik.each do |kimlik|
-          tr
-            td= kimlik.no
-            td= kimlik.name
-            td= kimlik.schname
-            td= kimlik.clsname
-            td= kimlik.exmdesk
-            td= kimlik.exmdate
-            
-    = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
-		style: "width:220px;position:relative;top:180px;left:3in;"
+.hero-unit style="background-color:#ffffff;"
+  .span10.offset2
+	h3 SINIFLARA DAĞILIM TABLOSU
+	table.table.table-striped.display
+	  thead
+		tr
+		  th Numara
+		  th Kullanıcı İsim
+		  th Sınav Yeri
+		  th Sınıf
+		  th Sıra No
+		  th Sınav Tarihi
+		  
+	  tbody
+		- @kimlik.each do |kimlik|
+		  tr
+			td= kimlik.no
+			td= kimlik.name
+			td= kimlik.schname
+			td= kimlik.clsname
+			td= kimlik.exmdesk
+			td= kimlik.exmdate
+			
+	= button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
+		style: "width:220px;position:absolute;top:4in;left:5in;"
 		
 .well.navbar-fixed-bottom
   .container

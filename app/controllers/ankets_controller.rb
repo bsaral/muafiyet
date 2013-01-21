@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-18 14:00 ") #anket süresi
+  @@time_finish = Time.zone.parse("2013-01-18 18:00 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
@@ -88,6 +88,7 @@ class AnketsController < ApplicationController
   def admin 
 	@anket = Anket.all
 	@kimlik = Identity.all
+	@time_finish = @@time_finish
 	@anket.each do |anket|
 		@student2 = User.find_by_username(anket.name)
 		@class =Classname.find(:all, :limit => 1,  :order => 'rand()')

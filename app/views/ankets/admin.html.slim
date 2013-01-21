@@ -1,28 +1,40 @@
-.container
-  .hero-unit
-    h3 ANKET CEVAP TABLOSU
-    table.table.table-striped.display
-      thead
-        tr
-          th NO
-          th Username
-          th Answer
-          th Created at
-          th Updated at
-      tbody
-        - @anket.each do |anket|
-          tr
-            td= anket.userid
-            td= anket.name
-            td= anket.answer
-            td= anket.created_at
-            td= anket.updated_at
-            
-	= button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
-		style: "width:220px;position:relative;top:220px;left:0in;"
-		
-	= button_to "SINIFLARA DAĞIT", "/dagitim", :class => 'btn btn-large btn-info', \
-		style: "width:220px;position:relative;top:160px;left:6in;"
+javascript:
+ | function gizli(){
+         | jQuery("div.gizli").toggle(100);
+	 | }
+
+  | function show(){
+         | jQuery("div.gizli").hide(100);
+	 | }
+.hero-unit style="background-color:#ffffff;"
+  h3 ANKET CEVAP TABLOSU
+  table.table.table-striped.display
+	 thead
+	   tr
+		 th NO
+		 th Username
+		 th Answer
+		 th Created at
+		 th Updated at
+	 tbody
+	   - @anket.each do |anket|
+		 tr
+		   td= anket.userid
+		   td= anket.name
+		   td= anket.answer
+		   td= anket.created_at
+		   td= anket.updated_at
+			
+	 = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
+		style: "width:220px;position:absolute;top:5in;left:3in;"
+	
+	 - if Time.now < @time_finish
+		= button_to "SINIFLARA DAĞIT", "/dagitim", :class => 'btn btn-large btn-info', \
+				style: "width:220px;position:absolute;top:5in;left:8in;", :disabled => true
+	 - else
+		= button_to "SINIFLARA DAĞIT", "/dagitim", :class => 'btn btn-large btn-info', \
+				style: "width:220px;position:absolute;top:5in;left:8in;"
+				
 	
 .well.navbar-fixed-bottom
   .container

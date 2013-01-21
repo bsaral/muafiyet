@@ -2,7 +2,6 @@
   .hero-unit style="position:absolute;top:100px;left:330px;width:6in;"
     h2 style="color:#990033"
       | Cevabınız  
-      - @find = Anket.find_by_userid(session[:user_id])
       span style="color:green;font-weight:bold;" = @find.answer   
       |   Olarak Kaydedilmiştir. Son Değiştirme Tarihiniz : 
       - @time_finish = Time.zone.parse("2012-12-09 22:34 ")

@@ -10,9 +10,12 @@ gem "mini_magick"
 gem 'roo'
 gem  "mysql2", ">= 0.3.11"
 gem 'yaml_db'
+gem 'sqlite3'
 
-group :development, :test do
-  gem 'sqlite3'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 gem 'execjs'
