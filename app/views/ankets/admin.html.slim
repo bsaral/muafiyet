@@ -29,7 +29,7 @@ javascript:
 		style: "width:220px;position:absolute;top:5in;left:3in;"
 	
 	 - if Time.now < @time_finish
-		= button_to "SINIFLARA DAĞIT", "/dagitim", :class => 'btn btn-large btn-info', \
+		= button_to "SINIFLARA DAĞIT", "/dagitim", :class => 'btn btn-large btn-warning', \
 				style: "width:220px;position:absolute;top:5in;left:8in;", :disabled => true
 	 - else
 		= button_to "SINIFLARA DAĞIT", "/dagitim", :class => 'btn btn-large btn-info', \

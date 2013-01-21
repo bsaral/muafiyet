@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
   
-  @@time_finish = Time.zone.parse("2013-01-18 18:00 ") #anket süresi
+  @@time_finish = Time.zone.parse("2013-01-21 14:09 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
@@ -53,7 +53,7 @@ class AnketsController < ApplicationController
 	    @find.update_attribute(:time, Time.now)
 		if @student.userlogin >= @@time_finish or Time.now >= @@time_finish
 			if @find.answer == "EVET"
-				redirect_to ("/kimlik")
+				redirect_to ("/show_sec")
 			else
 				redirect_to ("/finish_sec")
 			end
@@ -89,9 +89,16 @@ class AnketsController < ApplicationController
 	@anket = Anket.all
 	@kimlik = Identity.all
 	@time_finish = @@time_finish
+	
+  end
+  
+  
+  def dagitim
+	@anket = Anket.all
+	@kimlik = Identity.all
 	@anket.each do |anket|
 		@student2 = User.find_by_username(anket.name)
-		@class =Classname.find(:all, :limit => 1,  :order => 'rand()')
+		@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
 		@find2 = Identity.find_by_name(anket.name)
 		if @find2 == nil and anket.answer == "EVET"
 			@class.each do |idc|
@@ -113,18 +120,12 @@ class AnketsController < ApplicationController
 	 #@countA = Identity.where( "clsname LIKE ?", "A%").count
   end
   
-  
-  def dagitim
-	@class =Classname.find(:all, :limit => 1, :order => 'rand()')
-	@kimlik = Identity.all
-	
-  end
-  
   def kimlik
 	@student = User.find(session[:user_id])
 	@kart = Identity.find_by_name(@student.username)
-	@find = Anket.find_by_userid(@student.id)
-	
+	unless @kart != nil
+		redirect_to("/finish")
+	end
   end
   
 end
