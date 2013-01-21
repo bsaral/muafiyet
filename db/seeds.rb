@@ -17,14 +17,16 @@ User.create(username: "hayriye", password: "1234", password_confirmation: "1234"
 
 User.create(username: "admin", password: "1234", password_confirmation: "1234", role: "admin")
 
-Classname.create(schoolname: "Mühendislik Fakültesi", classname: "A005", floor: "5", examdate: "10.10.2013", desk: "1", totaldesk: 2)
 
-Classname.create(schoolname: "Fen Fakültesi", classname: "D005", floor: "1", examdate: "10.10.2013", desk: "10", totaldesk: 1)
 
-Classname.create(schoolname: "İktisat Fakültesi", classname: "D006", floor: "2", examdate: "10.10.2013", desk: "8", totaldesk: 1)
+Classname.create(schoolname: "Mühendislik Fakültesi", classname: "A005", floor: "5", examdate: "10.10.2013", desk: "1", totaldesk: 5)
 
-Classname.create(schoolname: "Tıp Fakültesi", classname: "D007", floor: "3", examdate: "10.10.2013", desk: "18", totaldesk: 1)
+Classname.create(schoolname: "Mühendislik Fakültesi", classname: "A005", floor: "5", examdate: "10.10.2013", desk: "2", totaldesk: 5)
 
-Classname.create(schoolname: "Ziraat Fakültesi", classname: "A008", floor: "4", examdate: "10.10.2013", desk: "24", totaldesk: 2)
+Classname.create(schoolname: "Mühendislik Fakültesi", classname: "A005", floor: "5", examdate: "10.10.2013", desk: "3", totaldesk: 5)
+
+Classname.create(schoolname: "Mühendislik Fakültesi", classname: "A005", floor: "5", examdate: "10.10.2013", desk: "4", totaldesk: 5)
+
+Classname.create(schoolname: "Mühendislik Fakültesi", classname: "A005", floor: "5", examdate: "10.10.2013", desk: "5", totaldesk: 5)
 
 
