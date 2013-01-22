@@ -1,5 +1,5 @@
 .container
-  .hero-unit style="position:absolute;top:80px;left:330px;width:6in;"
+  .hero-unit style="position:absolute;top:20px;left:280px;width:6in;background-color:white;"
     h3 style="color:#990033"  SINAV GİRİŞ KARTI
 	table.table.table-bordered.display
       thead
@@ -25,8 +25,8 @@
           th SINAV TARİHİ
           td= @kart.exmdate
           	
-    = button_to "ÇIKIŞ", logout_url, :class => 'btn btn-large btn-danger', \
-		style: "width:220px;position:absolute;top:4.3in;left:2.3in;"
+    = button_to "İNDİR", "#", :class => 'btn btn-large btn-primary', \
+		style: "width:220px;position:absolute;top:4.5in;left:2.3in;"
             
     
  

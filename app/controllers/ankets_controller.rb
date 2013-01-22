@@ -96,9 +96,11 @@ class AnketsController < ApplicationController
   def dagitim
 	@anket = Anket.all
 	@kimlik = Identity.all
+	@student = User.find(session[:user_id])
 	@anket.each do |anket|
 		@student2 = User.find_by_username(anket.name)
 		@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
+		@kart = Identity.find_by_name(@student.username)
 		@find2 = Identity.find_by_name(anket.name)
 		if @find2 == nil and anket.answer == "EVET"
 			@class.each do |idc|
@@ -112,12 +114,17 @@ class AnketsController < ApplicationController
 					exmdesk: idc.desk,
 					ttldesk: idc.totaldesk
 			    )
-			    #@count = Identity.find_by_clsname(idc.classname)
-				#unless @count.ttldesk == idc.totaldesk
+			 
+				if @kart.exmdesk == idc.desk && @find2.clsname == idc.classname 
+					@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
+					@class.each do |idc|
+						@find2.update_attribute(:schname => idc.schoolname, :clsname => idc.classname,\
+							:flat => idc.floor, :exmdesk => idc.desk, :ttldesk => idc.totaldesk)
+					end
+				end
 			end
 		end
 	 end
-	 #@countA = Identity.where( "clsname LIKE ?", "A%").count
   end
   
   def kimlik
