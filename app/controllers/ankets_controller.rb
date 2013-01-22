@@ -1,5 +1,4 @@
 class AnketsController < ApplicationController
-  
   @@time_finish = Time.zone.parse("2013-01-21 14:09 ") #anket süresi
   #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi

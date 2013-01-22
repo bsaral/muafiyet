@@ -11,6 +11,7 @@ gem 'roo'
 gem  "mysql2", ">= 0.3.11"
 gem 'yaml_db'
 gem 'sqlite3'
+gem 'prawn'
 
 
 group :development do
