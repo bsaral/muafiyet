@@ -1,6 +1,6 @@
 class AnketsController < ApplicationController
+
   @@time_finish = Time.zone.parse("2013-01-21 14:09 ") #anket süresi
-  #@@time_finish = Time.zone.parse("2012-12-18 13:34 ")
   @@exam_date = Time.zone.parse("2013-02-16 12:00 ") #sınav tarihi
   
   def index
@@ -86,7 +86,6 @@ class AnketsController < ApplicationController
   
   def admin 
 	@anket = Anket.all
-	@kimlik = Identity.all
 	@time_finish = @@time_finish
 	
   end
@@ -95,11 +94,9 @@ class AnketsController < ApplicationController
   def dagitim
 	@anket = Anket.all
 	@kimlik = Identity.all
-	@student = User.find(session[:user_id])
+	@class = Classname.all.shuffle
 	@anket.each do |anket|
 		@student2 = User.find_by_username(anket.name)
-		@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
-		@kart = Identity.find_by_name(@student.username)
 		@find2 = Identity.find_by_name(anket.name)
 		if @find2 == nil and anket.answer == "EVET"
 			@class.each do |idc|
@@ -114,13 +111,6 @@ class AnketsController < ApplicationController
 					ttldesk: idc.totaldesk
 			    )
 			 
-				if @kart.exmdesk == idc.desk && @find2.clsname == idc.classname 
-					@class = Classname.find(:all, :limit => 1,  :order => 'rand()')
-					@class.each do |idc|
-						@find2.update_attribute(:schname => idc.schoolname, :clsname => idc.classname,\
-							:flat => idc.floor, :exmdesk => idc.desk, :ttldesk => idc.totaldesk)
-					end
-				end
 			end
 		end
 	 end
