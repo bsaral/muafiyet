@@ -94,8 +94,8 @@ class AnketsController < ApplicationController
   def dagitim
 	@anket = Anket.all
 	@kimlik = Identity.all
-	@class = Classname.all.shuffle
 	@anket.each do |anket|
+		@class = Classname.all.shuffle[0..0]
 		@student2 = User.find_by_username(anket.name)
 		@find2 = Identity.find_by_name(anket.name)
 		if @find2 == nil and anket.answer == "EVET"
